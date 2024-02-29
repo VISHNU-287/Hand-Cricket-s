@@ -11,11 +11,6 @@ function CoinToss(){
 }
 
 
-
-
-
-
-
   //Creating the Storage Center
 
    let storage = JSON.parse(localStorage.getItem('record'));
@@ -376,7 +371,7 @@ function Userout(){
 function perUscore(){
   
   
-  document.getElementById('id-14').innerHTML = `Final System Run: ${storage.perscore}`;
+  document.getElementById('id-14').innerHTML = `Final User's Run: ${storage.perscore}`;
   
   }
 
