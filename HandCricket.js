@@ -27,13 +27,15 @@ function CoinToss(){
     };
     localStorage.removeItem('record');
     perCscore();
-SystemLiveScore();
-SystemLiveStokes();
-perUscore();
-UserLiveRun();
-UserLiveStokes();
-Decision();
-document.getElementById('id-100').innerHTML = `Toss again`;
+    SystemLiveScore();
+    SystemLiveStokes();
+    perUscore();
+    UserLiveRun();
+    UserLiveStokes();
+    Decision();
+    document.getElementById('id-100').innerHTML = `Toss again`;
+    document.getElementById('id-03').innerHTML = ``;
+    document.getElementById('id-13').innerHTML = ``;
    }
 
 
