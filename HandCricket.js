@@ -11,32 +11,34 @@ function CoinToss(){
 }
 
 
+
+
+
+
+
   //Creating the Storage Center
 
    let storage = JSON.parse(localStorage.getItem('record'));
    if(storage === null){
     storage = {
-      score:0,perscore:0,zero:0,one:0,two:0,three:0,four:0,five:0,six:0,Cscore:0,perCscore:0,Czero:0,Cone:0,Ctwo:0,Cthree:0,Cfour:0,Cfive:0,Csix:0,count:0
+      myscore:0,myzero:0,myone:0,mytwo:0,mythree:0,myfour:0,myfive:0,mysix:0,opponentscore:0,opponentzero:0,opponentone:0,opponenttwo:0,opponentthree:0,opponentfour:0,opponentfive:0,opponentsix:0,opponentcount:0,count:0,myout:0,opponentout:0
     }
    }
 
 
    function Reset(){
     storage = {
-      score:0,perscore:0,zero:0,one:0,two:0,three:0,four:0,five:0,six:0,Cscore:0,perCscore:0,Czero:0,Cone:0,Ctwo:0,Cthree:0,Cfour:0,Cfive:0,Csix:0,count:0
-    };
+      myscore:0,myzero:0,myone:0,mytwo:0,mythree:0,myfour:0,myfive:0,mysix:0,opponentscore:0,opponentzero:0,opponentone:0,opponenttwo:0,opponentthree:0,opponentfour:0,opponentfive:0,opponentsix:0,myout:0,opponentout:0};
     localStorage.removeItem('record');
-    perCscore();
-    SystemLiveScore();
-    SystemLiveStokes();
-    perUscore();
-    UserLiveRun();
-    UserLiveStokes();
-    Decision();
-    document.getElementById('id-100').innerHTML = `Toss again`;
-    document.getElementById('id-03').innerHTML = ``;
-    document.getElementById('id-13').innerHTML = ``;
-   }
+          SystemLiveScore();
+          SystemLiveStokes();
+          Decision();
+          UserLiveRun();
+          UserLiveStokes();
+          document.getElementById('id-100').innerHTML = `Press Toss`;
+          document.getElementById('id-13').innerHTML = ``;
+          document.getElementById('id-03').innerHTML = ``;
+        }
 
 
 
@@ -51,10 +53,11 @@ function CoinToss(){
                   result = Systems;
               }
             else if(Systems === 'Zero'){
-             document.getElementById('id-03').innerHTML = `System Out`;
+             document.getElementById('id-03').innerHTML = `Opponent Out`;
+             storage.opponentout = 1;
              
-             systemout();
-             Decision();
+          
+       
              
              
             }
@@ -69,9 +72,10 @@ function CoinToss(){
 
             }
             else if(Systems === 'One'){
-              document.getElementById('id-03').innerHTML = `System Out`;
-              systemout();
-              Decision();
+              document.getElementById('id-03').innerHTML = `Opponent Out`;
+              storage.opponentout = 1;
+            
+          
               
             }
 
@@ -87,9 +91,10 @@ function CoinToss(){
 
           }
           else if(Systems === 'Two'){
-            document.getElementById('id-03').innerHTML = `System Out`;
-            systemout();
-            Decision();
+            document.getElementById('id-03').innerHTML = `Opponent Out`;
+            storage.opponentout = 1;
+     
+
           }
         }
         else if(variable === 'Three'){
@@ -102,9 +107,10 @@ function CoinToss(){
 
           }
           else if(Systems === 'Three'){
-            document.getElementById('id-03').innerHTML = `System Out`;
-            systemout();
-            Decision();
+            document.getElementById('id-03').innerHTML = `Opponent Out`;
+            storage.opponentout = 1;
+          
+       
             
           }
         }
@@ -118,9 +124,10 @@ function CoinToss(){
 
           }
           else if(Systems === 'Four'){
-            document.getElementById('id-03').innerHTML = `System Out`;
-            systemout();
-            Decision();
+            document.getElementById('id-03').innerHTML = `Opponent Out`;
+            storage.opponentout = 1;
+           
+       
            
           }
         }
@@ -135,9 +142,9 @@ function CoinToss(){
 
           }
           else if(Systems === 'Five'){
-            document.getElementById('id-03').innerHTML = `System Out`;
-            systemout();
-            Decision();
+            document.getElementById('id-03').innerHTML = `Opponent Out`;
+            storage.opponentout = 1;
+        
           }
         }
         else if(variable === 'Six'){
@@ -150,83 +157,61 @@ function CoinToss(){
 
             }
             else if(Systems === 'Six'){
-              document.getElementById('id-03').innerHTML = `System Out`;
-              systemout();
-              Decision();
-              
+              document.getElementById('id-03').innerHTML = `Opponent Out`;
+              storage.opponentout = 1;
+            
+             
             }
             
         }
         if(result === 'One'){
-          storage.Cscore  += 1; 
-          storage.Cone  += 1;
+          storage.opponentscore  += 1; 
+          storage.opponentone  += 1;
        }
        else if(result === 'Two'){
-         storage.Cscore += 2;
-         storage.Ctwo  += 1;
+         storage.opponentscore += 2;
+         storage.opponenttwo  += 1;
        }
        else if(result === 'Three'){
-         storage.Cscore += 3;
-         storage.Cthree  += 1;
+         storage.opponentscore += 3;
+         storage.opponentthree  += 1;
        }
        else if(result === 'Four'){
-         storage.Cscore += 4;
-         storage.Cfour  += 1;
+         storage.opponentscore += 4;
+         storage.opponentfour  += 1;
        }
        else if(result === 'Five'){
-         storage.Cscore += 5;
-         storage.Cfive  += 1;
+         storage.opponentscore += 5;
+         storage.opponentfive  += 1;
        }
        else if(result === 'Six'){
-         storage.Cscore += 6;
-         storage.Csix  += 1;
+         storage.opponentscore += 6;
+         storage.opponentsix  += 1;
        }
 
 
        localStorage.setItem('record',JSON.stringify(storage));
-       document.getElementById('id-01').innerHTML = `User ${variable} ${Systems} System`;
+       document.getElementById('id-01').innerHTML = `User ${variable} ${Systems} Opponent`;
 
        SystemLiveScore();
        SystemLiveStokes();
+       Decision();
     
     }
 
        
 
    function SystemLiveScore(){
-    document.getElementById('id-02').innerHTML = `Live  Total Run ${storage.Cscore}`;
+    document.getElementById('id-02').innerHTML = `Total Run ${storage.opponentscore}`;
   }
   
   function SystemLiveStokes(){
-    document.getElementById('id-05').innerHTML = `Dot's:${storage.Czero} One's:${storage.Cone}
-    Two's:${storage.Ctwo} Three's:${storage.Cthree} Four's:${storage.Cfour} Five's:${storage.Cfive} Six's: ${storage.Csix} `; 
+    document.getElementById('id-05').innerHTML = `Dot's:${storage.opponentzero} One's:${storage.opponentone}
+    Two's:${storage.opponenttwo} \n Three's:${storage.opponentthree} Four's:${storage.opponentfour} Five's:${storage.opponentfive} Six's: ${storage.opponentsix} `; 
   }
   
-  
- 
 
-  function perCscore(){
-    
-     document.getElementById('id-04').innerHTML = `Final System Run: ${storage.perCscore}`;
-    
-  }
-  
-  function systemout(){
-    
-    let tempscore = storage.Cscore;
-    storage.perCscore = storage.Cscore;
-    storage.Cscore = 0;
-    perCscore();
-    
-  }
-
-  
-
-  
-
-
-
-
+// end of opponent choice 
 
 
   function UserPicking(variables){
@@ -243,8 +228,7 @@ function CoinToss(){
           }
           else if(Systems === 'Zero'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
         
           }
         }
@@ -256,8 +240,7 @@ function CoinToss(){
           }
           else if(Systems === 'One'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
           }
         }
 
@@ -268,8 +251,8 @@ function CoinToss(){
           }
           else if(Systems === 'Two'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
+        
           }
         }
         else if(variables === 'Three'){
@@ -279,8 +262,8 @@ function CoinToss(){
           }
           else if(Systems === 'Three'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
+         
           }
         }
         else if(variables === 'Four'){
@@ -290,8 +273,8 @@ function CoinToss(){
           }
           else if(Systems === 'Four'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
+        
           }
 
         }
@@ -303,8 +286,8 @@ function CoinToss(){
           }
           else if(Systems === 'Five'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
+         
           }
 
         }
@@ -315,34 +298,34 @@ function CoinToss(){
           }
           else if(Systems === 'Six'){
           document.getElementById('id-13').innerHTML = `User \u{1F622} Out`;
-          Userout();
-          Decision();
+          storage.myout = 1;
+         
           }
         }
 
         if(results === 'One'){
-          storage.score  += 1;
-          storage.one  += 1;
+          storage.myscore  += 1;
+          storage.myone  += 1;
        }
        else if(results === 'Two'){
-         storage.score += 2;
-         storage.two += 1;
+         storage.myscore += 2;
+         storage.mytwo += 1;
        }
        else if(results === 'Three'){
-         storage.score += 3;
-         storage.three  += 1;
+         storage.myscore += 3;
+         storage.mythree  += 1;
        }
        else if(results === 'Four'){
-         storage.score += 4;
-         storage.four  += 1;
+         storage.myscore += 4;
+         storage.myfour  += 1;
        }
        else if(results === 'Five'){
-         storage.score += 5;
-         storage.five  += 1;
+         storage.myscore += 5;
+         storage.myfive  += 1;
        }
        else if(results === 'Six'){
-         storage.score += 6;
-         storage.six  += 1;
+         storage.myscore += 6;
+         storage.mysix  += 1;
        }
        localStorage.setItem('record',JSON.stringify(storage));
        
@@ -350,32 +333,18 @@ function CoinToss(){
 
        UserLiveRun();
        UserLiveStokes();
+       Decision();
        
 }
 
 function UserLiveRun(){
-  document.getElementById('id-11').innerHTML = `Live  Total Run ${storage.score} `;
+  document.getElementById('id-11').innerHTML = `Total Run ${storage.myscore} `;
 }
 
 function UserLiveStokes(){
-  document.getElementById('id-12').innerHTML = `Dot's:${storage.zero} One's:${storage.one}
-   Two's:${storage.two} Three's:${storage.three} Four's:${storage.four} Five's:${storage.five} Six's: ${storage.six}`;
+  document.getElementById('id-12').innerHTML = `Dot's:${storage.myzero} One's:${storage.myone}
+   Two's:${storage.mytwo} Three's:${storage.mythree} Four's:${storage.myfour} Five's:${storage.myfive} Six's: ${storage.mysix}`;
 }
-function Userout(){
-    
-  let tempscore = storage.score;
-  storage.perscore = tempscore;
-  storage.score = 0;
-  perUscore();
-  
-}
-
-function perUscore(){
-  
-  
-  document.getElementById('id-14').innerHTML = `Final User's Run: ${storage.perscore}`;
-  
-  }
 
  
 
@@ -437,33 +406,78 @@ function SystemPick(){
   
 }
 
-
-
-
-
-
 function Decision(){
   let diff = 0;
-  let User = storage.perscore;
-  let System = storage.perCscore;
+  let Systemout = storage.opponentout;
+  let Userout = storage.myout;
+  let System = storage.opponentscore;
+  let User = storage.myscore;
+
   if(System !== 0 && User !==0){
-    if(System > User){
-       diff = System - User;
-       storage.count = diff;
-      document.getElementById('id-45').innerHTML = ` Result: System Won By ${storage.count} Run`;
-      
+    if(System !== 0 && User !==0 && Systemout === 1 && Userout === 1){
+          if(System > User){
+            diff = System - User;
+            storage.count = diff;
+          document.getElementById('id-45').innerHTML = ` Result: Opponent Won By ${storage.count} Run`;
+          
+          }
+          else if(System < User){
+          diff = User - System;
+          storage.count = diff;
+          document.getElementById('id-45').innerHTML = `Result: User Won \u{1F44d} By ${storage.count} Run`;
+          
+          }
+          else if(System === User){
+          document.getElementById('id-45').innerHTML = ` Result: Match Tie \u{1F648}`;
+          
+          }
     }
-    else if(System < User){
-      diff = User - System;
-      storage.count = diff;
-      document.getElementById('id-45').innerHTML = `Result: User Won \u{1F44d} By ${storage.count} Run`;
-      
+    else if(System !== 0 && User !==0 && Systemout === 1 && Userout === 0){
+      if(System < User){
+        diff = User - System;
+        storage.count = diff;
+        document.getElementById('id-45').innerHTML = `Result: User Won \u{1F44d} By ${storage.count} Run`;
+        
+        }
+        else {
+          document.getElementById('id-45').innerHTML =`User  Playing`;
+        }
     }
-    else if(System === User){
-      document.getElementById('id-45').innerHTML = ` Result: Match Tie \u{1F648}`;
+    else if(System !== 0 && User !==0 && Systemout === 0 && Userout === 1){
+      if(System > User){
+        diff = System - User;
+        storage.count = diff;
+      document.getElementById('id-45').innerHTML = ` Result: Opponent Won By ${storage.count} Run`;
       
+      }
+      else{
+        document.getElementById('id-45').innerHTML = `Opponent Playing`;
+      }
     }
+
   }
+
+else if(System ===0 && User !==0 && Systemout === 1){
+  diff = User - System;
+  storage.count = diff;
+  document.getElementById('id-45').innerHTML = `Result: User Won \u{1F44d} By ${storage.count} Run`;
+}
+
+else if(System !== 0 && User === 0 && Userout === 1){
+  diff = System - User;
+  storage.count = diff;
+  document.getElementById('id-45').innerHTML = ` Result: Opponent Won By ${storage.count} Run`;
+}
+
+else if(System === 0 && User ===0 && Systemout === 1 && Userout === 1){
+  document.getElementById('id-45').innerHTML = ` Result: Match Tie \u{1F648}`;
+
+}
+
+
+
+
+
   else if(System === 0 && User ===0){
     document.getElementById('id-45').innerHTML = `Start Play \u{1F600}`;
 
@@ -480,14 +494,22 @@ function Decision(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
 // System Stable Visible Purpose Function Call
-perCscore();
 SystemLiveScore();
 SystemLiveStokes();
 
 //User Stable Visible  Purpose Function Call
 
-perUscore();
 UserLiveRun();
 UserLiveStokes();
 Decision();
