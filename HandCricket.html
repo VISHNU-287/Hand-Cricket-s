@@ -11,47 +11,111 @@
 <body>
 
 <marquee class="nes">HandCricket  (Limit upto 6)</marquee>
-  
-<button class="chead1" onclick="CoinToss()" title="Coin Toss"><img src="HandCricketImages/Coin.png" class="restart"></button>
-<button class="chead1" onclick="Reset()" title="Score Reset"><img src="HandCricketImages/Restart.jpg" class="restart"></button>  
+  <div class="first-container">
+  <div>
+    <button class="chead1" onclick="CoinToss()" title="Coin Toss"><img src="HandCricketImages/CoinToss.jpeg" class="restart"></button>
+    <div class="tossing">CoinToss</div>
+  </div>
+  <div>
+    <button class="chead1" onclick="Reset()" title="Score Reset"><img src="HandCricketImages/Restart.png" class="restart"></button>
+    <div class="restarting">Restart</div> 
+   </div>
+</div>
+
 
 <div class="main-2">
-   <!-- batting--> 
-  <div class="batting">
-
-    <button onclick="UserPicking('Zero')" class="cbat" title="dock"><img src="HandCricketImages/Dot.jpg" class="dot"></button>
-
-    <button onclick="UserPicking('One')" class="cbat" title="one run"><img src="HandCricketImages/One.jpg" class="dot"></button>
-  
-    <button onclick="UserPicking('Two')" class="cbat" title="two run"><img src="HandCricketImages/Two.jpg" class="dot"></button>
-  
-    <button onclick="UserPicking('Three')" class="cbat" title="three run"><img src="HandCricketImages/Three.jpg" class="dot"></button>
-  
-    <button onclick="UserPicking('Four')" class="cbat" title="four run"><img src="HandCricketImages/Four.jpg" class="dot"></button>
-  
-    <button onclick="UserPicking('Five')" class="cbat" title="five run"><img src="HandCricketImages/Five.jpg" class="dot"></button>
-  
-    <button onclick="UserPicking('Six')" class="cbat" title="six run"><img src="HandCricketImages/Six.jpg" class="dot"></button>
+  <!-- batting--> 
+  <div class="batting-1">
+    <div class="batting">
+ <div>
+  <button onclick="UserPicking('Zero')" class="cbat" title="dock"><img src="HandCricketImages/bat0.jpeg" class="dot"></button>
+  <div class="description_bat">Bat Miss</div>
+ </div>
+     
+ <div>
+  <button onclick="UserPicking('One')" class="cbat" title="one run"><img src="HandCricketImages/bat1.jpg" class="dot"></button>
+  <div class="description_bat">One Run</div>
+ </div>
+     
+   <div>
+    <button onclick="UserPicking('Two')" class="cbat" title="two run"><img src="HandCricketImages/bat2.jpg" class="dot"></button>
+    <div class="description_bat">Two Run</div>
+   </div>
+     
+   <div>
+    <button onclick="UserPicking('Three')" class="cbat" title="three run"><img src="HandCricketImages/bat3.jpg" class="dot"></button>
+    <div class="description_bat">Three Run</div>
+   </div>
+    
+   <div>
+    <button onclick="UserPicking('Four')" class="cbat" title="four run"><img src="HandCricketImages/bat4.jpg" class="dot"></button>
+    <div class="description_bat">Four Run</div>
+   </div>
+     
+   <div>
+    <button onclick="UserPicking('Five')" class="cbat" title="five run"><img src="HandCricketImages/bat5.jpg" class="dot"></button>
+    <div class="description_bat">Five Run</div>
+   </div>
+     
+   <div>
+    <button onclick="UserPicking('Six')" class="cbat" title="six run"><img src="HandCricketImages/bat6.jpg" class="dot"></button>
+    <div class="description_bat">Six Run</div>
+   </div>
+     
+ 
+     
+    </div>
+    <div class="batsword">Batting Line</div>
+    </div>
+   
+   <!--Bowling-->
+  <div class="bowling-1 b-1">
+    <div class="bowling">
+  <div>
+    <button onclick="SystemPicking('Zero')" class="cbat" title="dock"><img src="HandCricketImages/ball0.jpeg" class="dot"></button>
+    <div class="description_ball">Ball Miss</div>
   </div>
+      
+      
+      <div>
+        <button onclick="SystemPicking('One')" class="cbat" title="one ball"><img src="HandCricketImages/ball1.jpg" class="dot"></button>
+        <div class="description_ball">One Ball</div>
+      </div>
+      
+      
+      <div>
+        <button onclick="SystemPicking('Two')" class="cbat" title="two ball"><img src="HandCricketImages/ball2.jpg" class="dot"></button>
+        <div class="description_ball">Two Ball</div>
+      </div>
+     
+      
+      <div>
+        <button onclick="SystemPicking('Three')" class="cbat" title="three ball"><img src="HandCricketImages/ball3.jpg" class="dot"></button>
+        <div class="description_ball">Three Ball</div>
+      </div>
+      
+      
+      <div>
+        <button onclick="SystemPicking('Four')" class="cbat" title="four ball"><img src="HandCricketImages/ball4.jpg" class="dot"></button>
+        <div class="description_ball">Four Ball</div>
+      </div>
+      
+      
+      <div>
+        <button onclick="SystemPicking('Five')" class="cbat"  title="five ball"><img src="HandCricketImages/ball5.jpg" class="dot"></button>
+        <div class="description_ball">Five Ball</div>
+      </div>
+     
+      
+      <div>
+        <button onclick="SystemPicking('Six')" class="cbat" title="six ball" ><img src="HandCricketImages/ball6.jpg" class="dot"></button>
+        <div class="description_ball">Six Ball</div>
+      </div>
+      
+    </div>
+    <div class="bowlingword">Bowling Line</div>
+    </div>
 
-
-  <!--Bowling-->
-  <div class="bowling">
-
-    <button onclick="SystemPicking('Zero')" class="cbat" title="dock"><img src="HandCricketImages/DotBall.jpg" class="dot"></button>
-
-    <button onclick="SystemPicking('One')" class="cbat" title="one ball"><img src="HandCricketImages/OneBall.jpg" class="dot"></button>
-  
-    <button onclick="SystemPicking('Two')" class="cbat" title="two ball"><img src="HandCricketImages/TwoBall.jpg" class="dot"></button>
-  
-    <button onclick="SystemPicking('Three')" class="cbat" title="three ball"><img src="HandCricketImages/ThreeBall.jpg" class="dot"></button>
-  
-    <button onclick="SystemPicking('Four')" class="cbat" title="four ball"><img src="HandCricketImages/FourBall.jpg" class="dot"></button>
-  
-    <button onclick="SystemPicking('Five')" class="cbat"  title="five ball"><img src="HandCricketImages/FiveBall.jpg" class="dot"></button>
-  
-    <button onclick="SystemPicking('Six')" class="cbat" title="six ball" ><img src="HandCricketImages/SixBall.jpg" class="dot"></button>
-  </div>
 
 </div>
 
