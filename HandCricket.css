@@ -7,10 +7,20 @@ body{
   color:white;
   margin-bottom:30px; 
 }
+.first-container{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  width:1015px;
+}
+.tossing,.restarting{
+  font-family:arial;
+  font-size:15px;
+  color:red;
+}
 .Reset{
   border:2px solid white;
-  height:100px;
-  width:100px;
+ height:50px;
   background-color:transparent;
   border-radius:50%;
 }
@@ -18,113 +28,177 @@ body{
   display:flex;
 }
 .main-2{
-  
-  margin-bottom:50px;
+  display:flex;
 }
+/* score details */
+
  .main-container{
   display:flex;
   position:relative;
-  bottom:70px;
+  bottom:25px;
+
 
  }
 .container-1{
 display:inline-block;
-margin-left:30px;
+margin-left:2px;
+border:3px solid blue;
+padding-left:15px;
 }
 .container-2{
   display:inline-block;
+  border:3px solid green;
+  margin-left:0;
+  padding-left:15px;
+  
 }
+
 .sub-head{
   display:grid;
   grid-template-columns:540px 600px;
   column-gap: 8px;
   
 }
-.c-4{
-  font-family:Helvetica;
-  font-size:40px;
+
+/* Batting & Ball Css Lines*/
+
+
+.batting-1,.bowling-1{
+  border:5px solid blue;
+  height:127px;
+  width:483px;
+  padding:0;
+  padding-left:10px;
+  margin-right:10px;
+}
+.batting,.bowling{
+margin-top:10px;
+margin-bottom:10px;
+display:flex;
+}
+.dot{
+  height:53px;
+  width:50px;
+  border-radius:50%;
+}
+.cbat{
+  border-radius:50%;
+  border:3px solid red;
+  background-color:transparent;
+  height:60px;
+  width:60px;
+  cursor:pointer;
+  padding-left:0;
+  padding-right:0;
+  margin-right :8px;
+}
+.description_bat,.description_ball{
+  font-family:arial;
+  font-size:13px;
   color:red;
-  font-weight:bold;
-}
-.c-9{
-  font-family:Helvetica;
-  font-size:40px;
-  color:rgb(0, 255, 21);
-  font-weight:bold;
-}
-.c-1,.c-6{
-  font-family:Helvetica;
-  font-size:40px;
-  color:white;
-  font-weight:bold;
-}
-.c-2,.c-3{
-  font-family:Helvetica;
-  font-size:20px;
-  color:white;
-}
-.c-5,.c-10{
-  font-family:Helvetica;
-  font-size:35px;
-  color:white;
 }
 
-.c-7,.c-8{
-  font-family:Helvetica;
-  font-size:20px;
-  color:white;
-}
+
+/* End Of Batting and Ball Css*/
+
 .c-11{
   font-family:arial;
   color:rgb(224, 27, 175);
-  font-size:50px;
-  
+  font-size:30px;
+  margin:0;
+  margin-top:10px; 
 }
 .c-100{
   font-family:arial;
   color:rgb(24, 210, 216);
-  font-size:50px;
-  
+  font-size:30px;
+  margin:0;
+  margin-top:10px;
 }
+/*Score Card Css*/
+.c-1,.c-6{
+  font-family:Helvetica;
+  font-size:30px;
+  color:white;
+  margin:0;
+  margin-top:15px;
+}
+/* End Of score Card Css*/
+
+
+/* Start Out Result */
+.c-4,.c-9{
+  font-family:Helvetica;
+  font-size:28px;
+  color:red;
+  font-weight:bold;
+  margin:0;
+  margin-bottom:30px;
+}
+.c-9{
+  color:rgb(0, 255, 21);
+}
+/* End Out Result */
+
+.c-2,.c-3{
+  font-family:Helvetica;
+  font-size:18.7px;
+  color:white;
+}
+.c-5,.c-10{
+  font-family:Helvetica;
+  font-size:20px;
+  color:white;
+  margin-bottom:8px;
+}
+
+.c-7,.c-8{
+  font-family:Helvetica;
+  font-size:18.7px;
+  color:white;
+}
+
+
 
 .toss{
   position: relative;
   left:300px;
 }
-.cbat{
-  border-radius:50%;
-  border:3px solid white;
-  background-color:transparent;
-  height:100px;
-  width:100px;
-  cursor:pointer;
-}
+
 .chead1{
   
   border-radius:50%;
-  border:3px solid white;
+  border:5px solid rgb(7, 209, 165);
   background-color:white;
-  height:100px;
-  width:100px;
+  height:70px;
+  width:70px;
   margin-right:20px;
   margin-bottom:0px;  
   cursor:pointer;
+  padding:0;
 }
 
-.dot{
-  height:92px;
-  width:85px;
-  border-radius:50%;
-}
-.batting{
-  margin-top:30px;
-}
-.bowling{
-  margin-top:30px;
-}
 .restart{
   border-radius :50%;
   border:none;
-  height:50px;
-  width:50px; 
+  height:60px;
+  width:60px; 
 }
+
+.b-1{
+  border:5px solid greenyellow;
+}
+
+.batsword,.bowlingword{
+font-family:arial;
+font-size:30px;
+color:greenyellow;
+margin-top:10px;
+margin:0px;
+}
+.bow-1{
+  color:yellow;
+}
+
+
+
