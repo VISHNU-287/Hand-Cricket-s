@@ -10,12 +10,6 @@ function CoinToss(){
   }
 }
 
-
-
-
-
-
-
   //Creating the Storage Center
 
    let storage = JSON.parse(localStorage.getItem('record'));
@@ -346,25 +340,6 @@ function UserLiveStokes(){
    Two's:${storage.mytwo} Three's:${storage.mythree} Four's:${storage.myfour} Five's:${storage.myfive} Six's: ${storage.mysix}`;
 }
 
- 
-
-
- 
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-
 
 function SystemPick(){
   let picking = '';
@@ -474,10 +449,6 @@ else if(System === 0 && User ===0 && Systemout === 1 && Userout === 1){
 
 }
 
-
-
-
-
   else if(System === 0 && User ===0){
     document.getElementById('id-45').innerHTML = `Start Play \u{1F600}`;
 
@@ -494,16 +465,6 @@ else if(System === 0 && User ===0 && Systemout === 1 && Userout === 1){
 }
 
 
-
-
-
-
-
-
-
-
-
-
 // System Stable Visible Purpose Function Call
 SystemLiveScore();
 SystemLiveStokes();
@@ -514,3 +475,55 @@ UserLiveRun();
 UserLiveStokes();
 Decision();
 CoinToss();
+// Js Code For KeyButton Pressing
+
+document.body.addEventListener('keydown',(event)=> {
+if(event.key === '0'){
+  UserPicking('Zero');
+}
+else if(event.key === '1'){
+  UserPicking('One');
+}
+else if(event.key === '2'){
+  UserPicking('Two');
+}
+else if(event.key === '3'){
+  UserPicking('Three');
+}
+else if(event.key === '4'){
+  UserPicking('Four');
+}
+else if(event.key === '5'){
+  UserPicking('Five');
+}
+else if(event.key === '6'){
+  UserPicking('Six');
+}
+else if(event.key === ')'){
+  SystemPicking('Zero');
+}
+else if(event.key === '!'){
+  SystemPicking('One');
+}
+else if(event.key === '@'){
+  SystemPicking('Two');
+}
+else if(event.key === '#'){
+  SystemPicking('Three');
+}
+else if(event.key === '$'){
+  SystemPicking('Four');
+}
+else if(event.key === '%'){
+  SystemPicking('Five');
+}
+else if(event.key === '^'){
+  SystemPicking('Six');
+}
+else if(event.key === 'c'){
+  CoinToss();
+}
+else if(event.key === 'r'){
+  Reset();
+}
+});
